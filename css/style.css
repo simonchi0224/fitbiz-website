@@ -276,8 +276,15 @@ img { max-width: 100%; display: block; }
   color: var(--navy); line-height: 1.3; margin-bottom: 8px;
 }
 .article-header .en-h1 {
-  font-size: 1rem; color: var(--gray-400); font-style: italic; margin-bottom: 16px;
+  font-size: 1rem; color: var(--gray-400); font-style: italic; margin-bottom: 12px;
 }
+.article-author {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 0.85rem; font-weight: 600; color: var(--navy-light);
+  background: rgba(30,58,95,0.06); border-radius: 20px;
+  padding: 4px 14px; margin-bottom: 4px;
+}
+.article-author::before { content: "✍️"; font-size: 0.8rem; }
 .en-summary-box {
   background: var(--gray-50); border-left: 4px solid var(--orange);
   border-radius: 0 var(--radius) var(--radius) 0;
