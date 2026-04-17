@@ -71,6 +71,10 @@ const ARTICLES = [
   { path: 'community/article-4.html', title: '台灣健身產業需要什麼樣的政府支持？FitBiz政策倡議白皮書', tag: '政策倡議', section: 'community', icon: '🏛️' },
   { path: 'community/article-5.html', title: 'FitBiz 2025 台灣健身產業年度報告', tag: '年度報告', section: 'community', icon: '📊' },
   { path: 'community/article-6.html', title: '合作比競爭強：台灣中小健身房的集體生存法則', tag: '產業合作', section: 'community', icon: '🤝' },
+  // 經營管理（新）
+  { path: 'operations/article-9.html', title: '健身房危機管理手冊：會員受傷、器材故障、負評爆發的完整應對流程', tag: '危機管理', section: 'operations', icon: '🚨' },
+  // 行銷獲客（新）
+  { path: 'marketing/article-8.html', title: '台灣女性健身客群深度解析：她們才是市場主力，你的行銷還在針對男性嗎？', tag: '女性市場', section: 'marketing', icon: '👩' },
 ];
 
 // 交叉推薦的配對（不同分區之間互相推薦）

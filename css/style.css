@@ -355,6 +355,11 @@ img { max-width: 100%; display: block; }
   padding: 4px 14px; margin-bottom: 4px;
 }
 .article-author::before { content: "✍️"; font-size: 0.8rem; }
+.article-date {
+  font-size: 0.78rem; color: var(--gray-400); margin-top: 6px; margin-bottom: 20px;
+  display: flex; align-items: center; gap: 6px;
+}
+.article-date::before { content: "📅"; font-size: 0.75rem; }
 .en-summary-box {
   background: var(--gray-50); border-left: 4px solid var(--orange);
   border-radius: 0 var(--radius) var(--radius) 0;
