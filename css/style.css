@@ -446,7 +446,7 @@ footer ul a:hover { color: var(--orange); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .hero { padding: 100px 5% 48px; }
   .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-right { justify-content: flex-start; }
+  .hero-right { display: none; }
   .hero-data-card { max-width: 100%; }
 }
 @media (max-width: 480px) {
