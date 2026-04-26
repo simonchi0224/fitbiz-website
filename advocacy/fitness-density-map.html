@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台灣各縣市健身設施密度統計｜FitBiz 政策資料</title>
+<meta name="description" content="台灣各縣市每千人健身設施數量統計圖表。資料來源：關鍵評論網、財政部營利事業統計、內政部人口統計。供政策研究、媒體記者引用。">
+<link rel="canonical" href="https://www.fitbiz.pro/advocacy/fitness-density-map.html">
+<meta property="og:title" content="台灣各縣市健身設施密度統計｜FitBiz 政策資料">
+<meta property="og:url" content="https://www.fitbiz.pro/advocacy/fitness-density-map.html">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="zh_TW">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3MGMCWKJB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D3MGMCWKJB');
+</script>
+<style>
+  .page-inner {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 100px 5% 80px;
+  }
+  .page-inner .breadcrumb {
+    font-size: 0.82rem;
+    color: #86868b;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  .page-inner .breadcrumb a { color: var(--orange); text-decoration: none; }
+
+  h1 {
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    font-weight: 900;
+    color: #1d1d1f;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+  .subtitle {
+    font-size: 0.95rem;
+    color: #6e6e73;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 680px;
+  }
+
+  /* ── Key Stats ── */
+  .kpi-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .kpi-card {
+    flex: 1;
+    min-width: 160px;
+    background: #f5f5f7;
+    border-radius: 12px;
+    padding: 18px 20px;
+  }
+  .kpi-n {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--orange);
+    line-height: 1;
+    margin-bottom: 4px;
+  }
+  .kpi-label {
+    font-size: 0.8rem;
+    color: #6e6e73;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  /* ── Toggle tabs ── */
+  .view-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+  }
+  .view-tab {
+    padding: 7px 16px;
+    border-radius: 8px;
+    border: 1.5px solid #d2d2d7;
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #6e6e73;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .view-tab.active {
+    background: #1d1d1f;
+    border-color: #1d1d1f;
+    color: white;
+  }
+
+  /* ── Bar chart ── */
+  #view-chart { display: block; }
+  #view-table { display: none; }
+
+  .chart-wrap { margin-bottom: 8px; }
+  .chart-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 0.88rem;
+  }
+  .chart-label {
+    width: 72px;
+    text-align: right;
+    font-weight: 700;
+    color: #1d1d1f;
+    flex-shrink: 0;
+    font-size: 0.85rem;
+  }
+  .chart-bar-wrap {
+    flex: 1;
+    background: #f0f0f0;
+    border-radius: 6px;
+    height: 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .chart-bar {
+    height: 100%;
+    border-radius: 6px;
+    transition: width .6s cubic-bezier(.4,0,.2,1);
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+  }
+  .chart-bar span {
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+    white-space: nowrap;
+  }
+  .chart-bar.no-data {
+    background: #e5e7eb !important;
+    width: 30% !important;
+  }
+  .chart-bar.no-data span { color: #9ca3af; }
+  .chart-meta {
+    width: 110px;
+    flex-shrink: 0;
+    font-size: 0.78rem;
+    color: #86868b;
+    line-height: 1.4;
+  }
+  .chart-meta strong { color: #1d1d1f; font-size: 0.85rem; }
+
+  /* color scale */
+  .density-5 { background: #7c3aed; }
+  .density-4 { background: #f97316; }
+  .density-3 { background: #fb923c; }
+  .density-2 { background: #fdba74; }
+  .density-1 { background: #fed7aa; }
+  .density-0 { background: #e5e7eb; }
+
+  /* ── Table ── */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.88rem;
+  }
+  .data-table thead th {
+    background: #1d1d1f;
+    color: white;
+    padding: 10px 14px;
+    text-align: left;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    user-select: none;
+  }
+  .data-table thead th:hover { background: #333; }
+  .data-table thead th.sorted { background: var(--orange); }
+  .data-table td {
+    padding: 10px 14px;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: middle;
+    line-height: 1.5;
+  }
+  .data-table tr:nth-child(even) td { background: #fafafa; }
+  .data-table tr:hover td { background: #fff8f0; }
+  .density-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: white;
+  }
+  .rank-num {
+    font-weight: 900;
+    color: var(--orange);
+    font-size: 1rem;
+  }
+  .no-data-cell { color: #9ca3af; font-style: italic; font-size: 0.82rem; }
+  .source-badge {
+    font-size: 0.72rem;
+    color: #86868b;
+    background: #f5f5f7;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .legend {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    font-size: 0.78rem;
+    color: #6e6e73;
+    font-weight: 600;
+    align-items: center;
+  }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex-shrink: 0;
+  }
+
+  .data-note {
+    background: #fffbeb;
+    border: 1.5px solid #fde68a;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 0.82rem;
+    color: #92400e;
+    line-height: 1.7;
+    margin: 24px 0;
+  }
+  .data-note strong { color: #78350f; }
+
+  .cta-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid #e5e7eb;
+  }
+  .cta-row a {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+  .cta-primary { background: var(--orange); color: white; }
+  .cta-secondary { background: #f5f5f7; color: #1d1d1f; border: 1.5px solid #d2d2d7; }
+
+  .sources-section {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 0.8rem;
+    color: #86868b;
+    line-height: 1.7;
+  }
+  .sources-section h4 { font-size: 0.82rem; font-weight: 700; color: #6e6e73; margin-bottom: 10px; }
+  .sources-section a { color: var(--orange); }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="navbar-logo">Fit<span>Biz</span><small>fitbiz.pro</small></a>
+  <ul class="navbar-nav">
+    <li><a href="../industry-insights/index.html">產業洞察</a></li>
+    <li><a href="../operations/index.html">經營管理</a></li>
+    <li><a href="../legal/index.html">法規合規</a></li>
+    <li><a href="../marketing/index.html">行銷獲客</a></li>
+    <li><a href="../training/index.html">專業培訓</a></li>
+    <li><a href="../community/index.html">產業社群</a></li>
+    <li><a href="index.html" style="color:var(--orange)">政府倡議</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-inner">
+  <div class="breadcrumb"><a href="index.html">政府倡議專區</a> › 政策數據</div>
+
+  <h1>台灣各縣市健身設施密度統計</h1>
+  <p class="subtitle">每千人健身中心數量分布。資料來源：關鍵評論網 / 財政部營利事業統計 / 內政部人口統計。六都數據已確認，其餘縣市待財政部開放資料補充。媒體記者可自由引用，請註明 FitBiz 台灣健身產業智庫。</p>
+
+  <!-- KPI -->
+  <div class="kpi-row">
+    <div class="kpi-card">
+      <div class="kpi-n">1,095</div>
+      <div class="kpi-label">全台健身中心總數<br><small>2024年，歷年新高</small></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-n">0.046</div>
+      <div class="kpi-label">全台平均每千人健身中心數<br><small>人口2,346萬估算</small></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-n">台北市</div>
+      <div class="kpi-label">密度最高縣市<br><small>每千人 0.057 間</small></div>
+    </div>
+    <div class="kpi-card">
+      <div class="kpi-n">186.6億</div>
+      <div class="kpi-label">全台健身中心年銷售額<br><small>2024年，歷年新高</small></div>
+    </div>
+  </div>
+
+  <!-- Tabs -->
+  <div class="view-tabs">
+    <button class="view-tab active" onclick="switchView('chart', this)">長條圖</button>
+    <button class="view-tab" onclick="switchView('table', this)">統計表</button>
+  </div>
+
+  <!-- Legend -->
+  <div class="legend">
+    <span style="color:#6e6e73;font-weight:700;">每千人密度：</span>
+    <div class="legend-item"><div class="legend-dot density-5"></div> ≥ 0.055（最高）</div>
+    <div class="legend-item"><div class="legend-dot density-4"></div> 0.045–0.054</div>
+    <div class="legend-item"><div class="legend-dot density-3"></div> 0.035–0.044</div>
+    <div class="legend-item"><div class="legend-dot density-2"></div> 0.025–0.034</div>
+    <div class="legend-item"><div class="legend-dot density-1"></div> &lt; 0.025</div>
+    <div class="legend-item"><div class="legend-dot density-0"></div> 數據待補充</div>
+  </div>
+
+  <!-- CHART VIEW -->
+  <div id="view-chart">
+    <div class="chart-wrap" id="chart-container"></div>
+  </div>
+
+  <!-- TABLE VIEW -->
+  <div id="view-table">
+    <table class="data-table" id="data-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable(0)">排名</th>
+          <th onclick="sortTable(1)">縣市</th>
+          <th onclick="sortTable(2)">健身中心數（間）</th>
+          <th onclick="sortTable(3)">人口（萬人）</th>
+          <th onclick="sortTable(4)">每千人密度</th>
+          <th>資料來源</th>
+        </tr>
+      </thead>
+      <tbody id="table-body"></tbody>
+    </table>
+  </div>
+
+  <div class="data-note">
+    <strong>數據說明與限制</strong><br>
+    六都（台北、新北、桃園、台中、台南、高雄）數據來源為關鍵評論網整理之財政部營利事業統計資料（2024年）。人口數據來源為內政部戶政司（2024年底）。非六都縣市的健身設施數量，目前尚無縣市層級的公開整理資料，標示為「待補充」。<br><br>
+    <strong>FitBiz 倡議：</strong>財政部及體育署應定期發布各縣市層級的健身設施普查數據，並以開放資料格式（CSV / JSON）公開，供學術研究、政策評估與媒體報導使用。這是本政策倡議主張的具體第一步。
+  </div>
+
+  <div class="cta-row">
+    <a href="urban-fitness-metric.html" class="cta-primary">閱讀完整政策研究報告 →</a>
+    <a href="index.html" class="cta-secondary">回倡議專區首頁</a>
+    <a href="mailto:hello@fitbiz.pro" class="cta-secondary">媒體採訪聯繫</a>
+  </div>
+
+  <div class="sources-section">
+    <h4>資料來源</h4>
+    <ol>
+      <li>關鍵評論網（2025）：<a href="https://www.thenewslens.com/article/256073" target="_blank">健身中心家數和銷售額屢創新高</a> — 財政部營利事業統計整理</li>
+      <li>內政部戶政司：各縣市人口統計（2024年12月底）</li>
+      <li>教育部體育署 i 運動資訊平台：<a href="https://isports.sa.gov.tw" target="_blank">isports.sa.gov.tw</a></li>
+      <li>BookFast（2022）：<a href="https://www.bookfastpos.com/gym-management/2022-fitness-5-rules-executive-yuan/" target="_blank">行政院健身五要原則分析</a></li>
+    </ol>
+    <p style="margin-top:8px;">本頁數據為政策倡議參考用途，如需學術引用請自行向主管機關確認原始資料。更新日期：2026 年 4 月。</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div style="color:white;font-size:1.4rem;font-weight:900;">Fit<span style="color:#F97316;">Biz</span></div><p>台灣健身產業經營者的智庫與社群平台。</p></div>
+    <div><h4>知識庫</h4><ul><li><a href="../industry-insights/index.html">產業洞察</a></li><li><a href="../operations/index.html">經營管理</a></li><li><a href="../legal/index.html">法規合規</a></li></ul></div>
+    <div><h4>資源</h4><ul><li><a href="../marketing/index.html">行銷獲客</a></li><li><a href="../training/index.html">專業培訓</a></li><li><a href="../community/index.html">產業社群</a></li></ul></div>
+    <div><h4>倡議</h4><ul><li><a href="index.html">政府倡議專區</a></li><li><a href="urban-fitness-metric.html">都市健身指標研究</a></li><li><a href="fitness-density-map.html">密度統計圖表</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 FitBiz (fitbiz.pro) · 台灣健身產業 B2B 平台</p></div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+// ── Data ──
+const data = [
+  { city:"台北市", gyms:146, pop:257.2,  source:"關鍵評論網/財政部", confirmed:true },
+  { city:"新北市", gyms:null, pop:403.0, source:"待補充",            confirmed:false },
+  { city:"桃園市", gyms:70,  pop:227.1,  source:"關鍵評論網/財政部", confirmed:true },
+  { city:"台中市", gyms:131, pop:285.2,  source:"關鍵評論網/財政部", confirmed:true },
+  { city:"台南市", gyms:null, pop:187.2, source:"待補充",            confirmed:false },
+  { city:"高雄市", gyms:102, pop:277.0,  source:"關鍵評論網/財政部", confirmed:true },
+  { city:"基隆市", gyms:null, pop:36.8,  source:"待補充",            confirmed:false },
+  { city:"新竹市", gyms:null, pop:45.1,  source:"待補充",            confirmed:false },
+  { city:"新竹縣", gyms:null, pop:57.4,  source:"待補充",            confirmed:false },
+  { city:"苗栗縣", gyms:null, pop:54.1,  source:"待補充",            confirmed:false },
+  { city:"彰化縣", gyms:null, pop:127.0, source:"待補充",            confirmed:false },
+  { city:"南投縣", gyms:null, pop:49.3,  source:"待補充",            confirmed:false },
+  { city:"雲林縣", gyms:null, pop:68.0,  source:"待補充",            confirmed:false },
+  { city:"嘉義市", gyms:null, pop:26.8,  source:"待補充",            confirmed:false },
+  { city:"嘉義縣", gyms:null, pop:51.2,  source:"待補充",            confirmed:false },
+  { city:"屏東縣", gyms:null, pop:83.4,  source:"待補充",            confirmed:false },
+  { city:"宜蘭縣", gyms:null, pop:46.4,  source:"待補充",            confirmed:false },
+  { city:"花蓮縣", gyms:null, pop:32.5,  source:"待補充",            confirmed:false },
+  { city:"台東縣", gyms:null, pop:22.1,  source:"待補充",            confirmed:false },
+  { city:"澎湖縣", gyms:null, pop:10.4,  source:"待補充",            confirmed:false },
+  { city:"金門縣", gyms:null, pop:14.3,  source:"待補充",            confirmed:false },
+];
+
+// Calculate density
+data.forEach(d => {
+  d.density = d.gyms !== null ? (d.gyms / (d.pop * 10)).toFixed(4) : null;
+  // density = gyms / (pop*10000) * 1000 = gyms/(pop*10)
+});
+
+// Sort confirmed data by density desc for chart
+const confirmed = data.filter(d => d.confirmed).sort((a,b) => b.density - a.density);
+const unconfirmed = data.filter(d => !d.confirmed);
+const chartData = [...confirmed, ...unconfirmed];
+
+// Max density for scaling
+const maxDensity = Math.max(...confirmed.map(d => parseFloat(d.density)));
+
+function getDensityClass(density) {
+  if (!density) return 'density-0';
+  const d = parseFloat(density);
+  if (d >= 0.055) return 'density-5';
+  if (d >= 0.045) return 'density-4';
+  if (d >= 0.035) return 'density-3';
+  if (d >= 0.025) return 'density-2';
+  return 'density-1';
+}
+
+function getDensityColor(density) {
+  const cls = getDensityClass(density);
+  const colors = {
+    'density-5':'#7c3aed','density-4':'#f97316',
+    'density-3':'#fb923c','density-2':'#fdba74',
+    'density-1':'#fed7aa','density-0':'#e5e7eb'
+  };
+  return colors[cls];
+}
+
+// ── Build chart ──
+function buildChart() {
+  const container = document.getElementById('chart-container');
+  container.innerHTML = '';
+  chartData.forEach(d => {
+    const pct = d.density ? (parseFloat(d.density) / (maxDensity * 1.15) * 100).toFixed(1) : 30;
+    const color = getDensityColor(d.density);
+    const noData = !d.confirmed;
+    container.innerHTML += `
+      <div class="chart-row">
+        <div class="chart-label">${d.city.replace('市','').replace('縣','').replace('台','臺').replace('臺','台')}</div>
+        <div class="chart-bar-wrap">
+          <div class="chart-bar ${noData?'no-data':''}" style="width:${pct}%;background:${noData?'':color}">
+            <span>${noData ? '數據待補充' : `${d.density} 間/千人`}</span>
+          </div>
+        </div>
+        <div class="chart-meta">
+          ${d.gyms !== null ? `<strong>${d.gyms} 間</strong><br>人口 ${d.pop}萬` : `<span style="color:#9ca3af">—</span>`}
+        </div>
+      </div>`;
+  });
+}
+
+// ── Build table ──
+let sortCol = 4, sortDir = -1;
+function buildTable() {
+  const allData = data.map((d,i) => ({...d, origIndex:i}));
+  const withData = allData.filter(d=>d.confirmed).sort((a,b)=>parseFloat(b.density)-parseFloat(a.density));
+  const withoutData = allData.filter(d=>!d.confirmed);
+  let rank = 1;
+  const rows = [...withData.map(d => ({...d, rank: rank++})), ...withoutData.map(d => ({...d, rank:'—'}))];
+
+  const tbody = document.getElementById('table-body');
+  tbody.innerHTML = rows.map(d => `
+    <tr>
+      <td><span class="rank-num">${d.rank}</span></td>
+      <td><strong>${d.city}</strong></td>
+      <td>${d.gyms !== null ? d.gyms : '<span class="no-data-cell">待補充</span>'}</td>
+      <td>${d.pop}</td>
+      <td>${d.density !== null
+        ? `<span class="density-badge ${getDensityClass(d.density)}" style="background:${getDensityColor(d.density)}">${d.density}</span>`
+        : '<span class="no-data-cell">—</span>'}</td>
+      <td><span class="source-badge">${d.source}</span></td>
+    </tr>`).join('');
+}
+
+// ── Switch view ──
+function switchView(view, btn) {
+  document.querySelectorAll('.view-tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('view-chart').style.display = view==='chart' ? 'block' : 'none';
+  document.getElementById('view-table').style.display  = view==='table' ? 'block' : 'none';
+}
+
+// ── Init ──
+buildChart();
+buildTable();
+</script>
+</body>
+</html>
