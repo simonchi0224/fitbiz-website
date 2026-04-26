@@ -1,0 +1,1000 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>政府倡議專區｜FitBiz 台灣健身產業政策資料庫</title>
+<meta name="description" content="台灣健身產業政策倡議資料庫。按主管機關分類，每項議題附背景說明、法規依據、具體建議與資料來源。供記者、媒體、民意代表直接引用。">
+<link rel="canonical" href="https://www.fitbiz.pro/advocacy/">
+<meta property="og:title" content="政府倡議專區｜FitBiz 台灣健身產業政策資料庫">
+<meta property="og:description" content="台灣健身產業政策議題完整資料庫，附來源引用，供媒體記者直接取用。">
+<meta property="og:url" content="https://www.fitbiz.pro/advocacy/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-D3MGMCWKJB"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-D3MGMCWKJB');
+</script>
+<style>
+  /* ── Media bar ── */
+  .media-bar {
+    background: #1d1d1f;
+    padding: 14px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .media-bar p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.85rem;
+    margin: 0;
+  }
+  .media-bar p strong { color: white; }
+  .media-bar a {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-weight: 700;
+    font-size: 0.85rem;
+    padding: 8px 18px;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* ── Filter tabs ── */
+  .filter-wrap {
+    padding: 32px 5% 0;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .filter-tabs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .filter-tab {
+    padding: 7px 16px;
+    border-radius: 99px;
+    border: 1.5px solid #d2d2d7;
+    background: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #6e6e73;
+    cursor: pointer;
+    transition: all .15s;
+    white-space: nowrap;
+  }
+  .filter-tab:hover { border-color: var(--orange); color: var(--orange); }
+  .filter-tab.active { background: var(--orange); border-color: var(--orange); color: white; }
+
+  /* ── Issue cards ── */
+  .issues-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 5% 80px;
+  }
+  .agency-section { margin-bottom: 56px; }
+  .agency-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid #f0f0f0;
+  }
+  .agency-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: var(--orange);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .agency-name { font-size: 1.15rem; font-weight: 900; color: #1d1d1f; }
+  .agency-sub { font-size: 0.82rem; color: #86868b; font-weight: 600; margin-top: 2px; }
+  .issue-count {
+    margin-left: auto;
+    background: #f5f5f7;
+    color: #6e6e73;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 99px;
+  }
+
+  .issue-card {
+    border: 1.5px solid #e5e7eb;
+    border-radius: 14px;
+    background: white;
+    margin-bottom: 16px;
+    overflow: hidden;
+    transition: box-shadow .15s;
+  }
+  .issue-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+  .issue-card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 20px 22px;
+    cursor: pointer;
+  }
+  .issue-priority {
+    flex-shrink: 0;
+    padding: 3px 10px;
+    border-radius: 99px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: .04em;
+    margin-top: 2px;
+  }
+  .priority-high { background: #fff1f0; color: #cf1322; border: 1px solid #ffccc7; }
+  .priority-mid  { background: #fff7e6; color: #d46b08; border: 1px solid #ffd591; }
+  .priority-low  { background: #f6ffed; color: #389e0d; border: 1px solid #b7eb8f; }
+
+  .issue-card-header h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1d1d1f;
+    margin: 0 0 4px;
+    line-height: 1.4;
+    flex: 1;
+  }
+  .issue-tagline {
+    font-size: 0.82rem;
+    color: #86868b;
+    line-height: 1.5;
+  }
+  .issue-chevron {
+    flex-shrink: 0;
+    font-size: 1rem;
+    color: #86868b;
+    transition: transform .2s;
+    margin-top: 2px;
+  }
+  .issue-card.open .issue-chevron { transform: rotate(180deg); }
+
+  .issue-body {
+    display: none;
+    border-top: 1.5px solid #f0f0f0;
+    padding: 22px 22px 24px;
+  }
+  .issue-card.open .issue-body { display: block; }
+
+  .issue-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  @media (max-width: 640px) { .issue-grid { grid-template-columns: 1fr; } }
+
+  .issue-block {
+    background: #f5f5f7;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .issue-block-full {
+    background: #f5f5f7;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .issue-block-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    color: #86868b;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .issue-block p, .issue-block-full p {
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.7;
+    margin: 0;
+  }
+  .issue-block ul, .issue-block-full ul {
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.8;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .issue-recommend {
+    background: #fff8f0;
+    border: 1.5px solid #fed7aa;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .issue-recommend .issue-block-label { color: #c2410c; }
+  .issue-recommend ul {
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.8;
+    margin: 0;
+    padding-left: 18px;
+  }
+
+  .issue-sources {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+  }
+  .issue-sources span {
+    font-size: 0.75rem;
+    color: #6e6e73;
+    font-weight: 600;
+  }
+  .source-tag {
+    display: inline-block;
+    background: white;
+    border: 1px solid #d2d2d7;
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.75rem;
+    color: #6e6e73;
+    font-weight: 600;
+  }
+
+  .quote-box {
+    border-left: 4px solid var(--orange);
+    background: #fff8f0;
+    padding: 12px 16px;
+    border-radius: 0 8px 8px 0;
+    margin: 12px 0;
+    font-size: 0.9rem;
+    color: #1d1d1f;
+    line-height: 1.6;
+    font-style: italic;
+  }
+  .quote-box strong { font-style: normal; }
+
+  /* ── Bottom CTA ── */
+  .advocacy-cta {
+    background: #1d1d1f;
+    border-radius: 20px;
+    padding: 48px 40px;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 80px;
+  }
+  .advocacy-cta h2 { color: white; font-size: 1.5rem; font-weight: 900; margin-bottom: 10px; }
+  .advocacy-cta p { color: rgba(255,255,255,0.65); font-size: 0.95rem; line-height: 1.7; margin-bottom: 24px; }
+  .advocacy-cta a.btn-email {
+    display: inline-block;
+    background: var(--orange);
+    color: white;
+    font-weight: 700;
+    padding: 13px 28px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="../index.html" class="navbar-logo">Fit<span>Biz</span><small>fitbiz.pro</small></a>
+  <ul class="navbar-nav">
+    <li><a href="../industry-insights/index.html">產業洞察</a></li>
+    <li><a href="../operations/index.html">經營管理</a></li>
+    <li><a href="../legal/index.html">法規合規</a></li>
+    <li><a href="../marketing/index.html">行銷獲客</a></li>
+    <li><a href="../training/index.html">專業培訓</a></li>
+    <li><a href="../community/index.html">產業社群</a></li>
+    <li><a href="index.html" style="color:var(--orange)">政府倡議</a></li>
+  </ul>
+  <div class="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- MEDIA BAR -->
+<div class="media-bar">
+  <p><strong>媒體記者專區</strong>：本頁所有議題資料均可自由引用，引用時請註明「FitBiz 台灣健身產業智庫」。如需深度採訪或數據補充，歡迎直接聯繫。</p>
+  <a href="mailto:hello@fitbiz.pro">聯繫採訪 →</a>
+</div>
+
+<!-- HERO -->
+<div class="page-hero">
+  <div class="section-label">POLICY ADVOCACY</div>
+  <h1>政府倡議專區</h1>
+  <p class="en">Taiwan Fitness Industry Policy Database</p>
+  <p>台灣健身產業涉及多個主管機關，但長期缺乏系統性的政策對話。FitBiz 整理各項關鍵議題，附上背景說明、法規依據與具體建議，供民意代表、媒體記者、政策研究者直接取用。</p>
+</div>
+
+<!-- FILTER -->
+<div class="filter-wrap">
+  <div class="filter-tabs">
+    <button class="filter-tab active" onclick="filterAgency('all', this)">全部議題</button>
+    <button class="filter-tab" onclick="filterAgency('mohw', this)">衛福部</button>
+    <button class="filter-tab" onclick="filterAgency('sports', this)">體育署</button>
+    <button class="filter-tab" onclick="filterAgency('mol', this)">勞動部</button>
+    <button class="filter-tab" onclick="filterAgency('mof', this)">財政部</button>
+    <button class="filter-tab" onclick="filterAgency('ly', this)">立法院</button>
+    <button class="filter-tab" onclick="filterAgency('local', this)">地方政府</button>
+  </div>
+</div>
+
+<!-- ISSUES -->
+<div class="issues-wrap">
+
+  <!-- ══ 衛福部 ══ -->
+  <div class="agency-section" data-agency="mohw">
+    <div class="agency-header">
+      <div class="agency-icon">🏥</div>
+      <div>
+        <div class="agency-name">衛生福利部</div>
+        <div class="agency-sub">Ministry of Health and Welfare</div>
+      </div>
+      <div class="issue-count">3 項議題</div>
+    </div>
+
+    <!-- M1 -->
+    <div class="issue-card open">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>健身房 AED 設置無強制規範，猝死風險缺乏法律保障</h3>
+          <div class="issue-tagline">游泳池已納入規範，健身房至今仍是空白地帶</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>依現行《緊急醫療救護法》第14-2條，公共場所設置 AED 僅列舉特定場所，健身房、運動工作室並未納入強制設置名單。然而健身運動過程屬於高強度身體活動，心血管事件風險較一般環境高，民眾在健身房運動時發生猝死事件時有所聞，卻因無法規約束導致業者設置意願落差極大。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>緊急醫療救護法 第14-2條（公共場所 AED）</li>
+              <li>衛福部公告：強制設置 AED 場所清單</li>
+              <li>目前清單包含：捷運站、學校、大型百貨、游泳池等</li>
+              <li><strong>健身房、私人運動工作室：未列入</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>修正衛福部公告，將「健身房（使用面積逾100平方公尺）」及「運動工作室（會員逾50人）」納入強制設置 AED 場所</li>
+            <li>訂定健身房 AED 設置與人員訓練配套標準</li>
+            <li>提供中小規模場館設置補貼或減稅誘因，降低配合門檻</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">緊急醫療救護法（民國112年修正）</span>
+          <span class="source-tag">衛福部緊急醫療救護辦公室公告</span>
+          <span class="source-tag">台灣心臟學會 AED 普及推廣報告</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- M2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>健身教練提供「體適能指導」與「醫療行為」界定模糊，業者長期處於法律灰色地帶</h3>
+          <div class="issue-tagline">教練一旦提供飲食、復健建議即可能觸法，但現行無明確指引</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>《醫療法》第28條明定，非醫事人員不得執行醫療業務。然而健身教練在指導客戶時，常涉及體重管理、飲食建議、傷後恢復訓練等灰色地帶。主管機關迄今未訂定「健身指導」與「醫療行為」之明確界定準則，導致業者、教練、消費者三方均處於法律不確定狀態。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>醫療法 第28條（非醫事人員執行醫療業務之禁止）</li>
+              <li>物理治療師法（涉及運動傷害處理部分）</li>
+              <li>營養師法（涉及飲食建議部分）</li>
+              <li>目前無「健身指導業務範疇」之正式行政解釋</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>衛福部會同體育署，訂定「健身體適能指導業務範疇說明」行政函釋</li>
+            <li>明確列舉健身教練「可做」與「不可做」的服務範圍</li>
+            <li>建立健身教練與醫事人員跨域合作的合法框架（如運動處方合作機制）</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">醫療法（民國112年版）第28條</span>
+          <span class="source-tag">物理治療師法</span>
+          <span class="source-tag">衛福部醫事司相關函釋</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- M3 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>銀髮族運動促進缺乏健身產業參與機制，長照資源與健身場館嚴重脫節</h3>
+          <div class="issue-tagline">長照2.0將預防保健外包給醫療體系，健身專業被排除在外</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>台灣已進入超高齡社會，預防失能的運動介入被國際研究廣泛驗證有效。然而現行長照2.0體系中，運動促進計畫主要由醫院與診所承辦，具備場地設施與訓練專業的健身業者幾乎無法合法參與長照給付體系，造成資源浪費與服務缺口。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>長期照顧服務法</li>
+              <li>衛福部長照2.0計畫（預防及延緩失能照護）</li>
+              <li>目前給付對象以醫事機構為主</li>
+              <li>健身業者無對應的服務提供者資格認定機制</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>衛福部開放符合資格的健身場館申請「預防失能運動服務提供者」資格</li>
+            <li>訂定健身業者參與長照計畫之資格標準（場地、教練資歷、保險）</li>
+            <li>試辦健身場館與社區照顧關懷站合作的跨部會計畫</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">長期照顧服務法</span>
+          <span class="source-tag">衛福部長照2.0計畫說明</span>
+          <span class="source-tag">國家發展委員會人口推估報告（2024）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 體育署 ══ -->
+  <div class="agency-section" data-agency="sports">
+    <div class="agency-header">
+      <div class="agency-icon">🏋️</div>
+      <div>
+        <div class="agency-name">教育部體育署</div>
+        <div class="agency-sub">Sports Administration, Ministry of Education</div>
+      </div>
+      <div class="issue-count">2 項議題</div>
+    </div>
+
+    <!-- S1 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>健身教練認證百花齊放、良莠不齊，消費者無從判斷資質</h3>
+          <div class="issue-tagline">無國家統一標準，民間認證超過20種，消費者投訴無門</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>台灣目前無政府核可的健身教練統一認證制度。市場上流通的民間認證超過20種，學費從數千元到數萬元不等，品質差異懸殊。消費者無法從外部辨別教練資質，導致學員受傷糾紛頻發，也讓認真取得國際認證的專業教練面臨不公平競爭。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>運動產業發展條例（民國111年修正）</li>
+              <li>體育署「運動服務業」類別定義</li>
+              <li>目前健身教練非屬「技術士」或任何國家考試範疇</li>
+              <li>消費者保護法（申訴管道）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>體育署建立「健身體適能教練」國家認證分級制度（初級、中級、高級）</li>
+            <li>訂定課程最低時數、實習要求與換證機制</li>
+            <li>建立公開查詢平台，讓消費者可驗證教練持有認證</li>
+            <li>國際認證（NSCA、NASM、ACE等）納入採認清單，避免重複考試</li>
+          </ul>
+        </div>
+        <div class="quote-box">
+          「一個剛拿到三天速成班證書的教練，和考了半年拿到 NSCA-CSCS 的教練，在消費者眼中看起來沒有任何差別。這對產業是一種傷害。」<strong>— FitBiz 產業社群意見彙整</strong>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">運動產業發展條例（111年版）</span>
+          <span class="source-tag">體育署運動服務業調查報告</span>
+          <span class="source-tag">行政院消費者保護會申訴統計</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- S2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>健身產業未能充分享有「運動產業」政策優惠，振興資源分配不均</h3>
+          <div class="issue-tagline">運動產業發展條例的優惠多集中於賽事、競技，商業健身業者受益有限</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>《運動產業發展條例》雖已涵蓋運動服務業，但實際執行面，政策資源、補助計畫、獎勵措施多集中於職業運動、國際賽事、運動科技等領域。服務超過數百萬名一般民眾的商業健身房與個人工作室，幾乎無法取得實質政策支持，形成「競技優先、民間體育靠邊站」的結構性問題。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>運動產業發展條例 第7條（營利事業投資抵減）</li>
+              <li>體育署運動服務業輔導計畫</li>
+              <li>中小企業發展條例（部分適用）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>體育署明確將商業健身場館納入「運動產業輔導」核心對象</li>
+            <li>設立健身場館設備更新補助計畫（專項）</li>
+            <li>將「運動服務業創業輔導」列入青年創業補助計畫</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">運動產業發展條例（111年修正）</span>
+          <span class="source-tag">體育署年度施政計畫</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 勞動部 ══ -->
+  <div class="agency-section" data-agency="mol">
+    <div class="agency-header">
+      <div class="agency-icon">⚖️</div>
+      <div>
+        <div class="agency-name">勞動部</div>
+        <div class="agency-sub">Ministry of Labor</div>
+      </div>
+      <div class="issue-count">2 項議題</div>
+    </div>
+
+    <!-- L1 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>健身教練「受僱 vs 自僱」法律地位長期模糊，勞動保障嚴重不足</h3>
+          <div class="issue-tagline">「抽成制」、「場地費制」教練是否受勞基法保障，至今無明確認定標準</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>台灣健身房普遍採用「場地費制」或「抽成制」聘用教練，業者以「承攬」名義規避勞基法雇主責任。教練缺乏勞保、不享有最低工資保障、無法申請職業傷害補償。此一結構使大量健身教練長期游走於法律邊緣，工作不穩定、保障不足，也導致人才流失嚴重。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>勞動基準法 第2條（勞工、雇主定義）</li>
+              <li>勞工保險條例</li>
+              <li>勞動部勞動關係科函釋（承攬 vs 僱傭）</li>
+              <li>目前認定標準：「從屬性」原則，惟健身教練個案差異大</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>勞動部訂定「健身教練勞動關係認定參考指引」，明確判斷標準</li>
+            <li>對「場地費制」、「抽成制」教練進行專案認定研究</li>
+            <li>研議「獨立工作者保護法」草案，填補傳統受僱與完全自僱之間的保障空白</li>
+            <li>推動健身教練職業工會組織，強化集體協商能力</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">勞動基準法（民國112年版）</span>
+          <span class="source-tag">勞動部承攬關係認定函釋</span>
+          <span class="source-tag">台灣勞工陣線獨立工作者研究報告</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- L2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>健身教練職業傷害缺乏認定機制，肌肉骨骼傷害頻發卻無法申請補償</h3>
+          <div class="issue-tagline">教練的職業特殊性未被現行職安體系納入考量</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>健身教練長期示範動作、輔助學員，肌肉骨骼系統的累積性傷害（腰椎、膝蓋、肩膀）屬常見職業傷害。然而因許多教練以承攬身分工作，無法享有勞工保險職業傷病補償，且職業安全衛生法的適用範圍與認定程序對自僱者亦不友善。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>職業安全衛生法</li>
+              <li>勞工保險條例 第34條（職業傷病給付）</li>
+              <li>職業病認定委員會認定標準</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>勞動部職安署研議健身教練常見職業傷病清單</li>
+            <li>開放健身教練職業工會會員加入勞保，享有職業傷病保障</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">職業安全衛生法</span>
+          <span class="source-tag">勞工保險條例第34條</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 財政部 ══ -->
+  <div class="agency-section" data-agency="mof">
+    <div class="agency-header">
+      <div class="agency-icon">💰</div>
+      <div>
+        <div class="agency-name">財政部</div>
+        <div class="agency-sub">Ministry of Finance</div>
+      </div>
+      <div class="issue-count">2 項議題</div>
+    </div>
+
+    <!-- F1 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>部分縣市將健身房納入娛樂稅課徵範疇，不合理加重業者負擔</h3>
+          <div class="issue-tagline">健身應被視為健康促進服務，而非娛樂消費</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>《娛樂稅法》授權地方政府對特定娛樂場所課徵娛樂稅，部分縣市將「健身俱樂部」納入課徵範疇，稅率依地方規定不等。然而健身運動已被廣泛認定為預防醫療、健康促進的重要手段，以「娛樂」定性，不僅在政策邏輯上矛盾，也增加業者成本，間接提高消費者使用門檻。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>娛樂稅法（財政部主管）</li>
+              <li>各縣市娛樂稅自治條例（地方差異大）</li>
+              <li>運動產業發展條例（未涉娛樂稅豁免）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>財政部函釋明確將「以健康促進為目的之健身場館」排除娛樂稅課徵範圍</li>
+            <li>或修正娛樂稅法，增訂「具教練指導資格之運動服務業免徵」條款</li>
+            <li>統一各縣市認定標準，避免業者因地區不同承受差異待遇</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">娛樂稅法（民國110年版）</span>
+          <span class="source-tag">各縣市娛樂稅自治條例</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- F2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-low">長期推動</span>
+        <div style="flex:1">
+          <h3>企業員工健身消費無法抵稅，企業福利採購健身服務缺乏誘因</h3>
+          <div class="issue-tagline">鼓勵企業替員工購買健身會籍，需要稅制配套支持</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>多國（如美國、日本、新加坡）已允許企業將員工健身福利費用列為費用抵稅或享有稅收優惠，藉此鼓勵企業投資員工健康，減少長期醫療支出。台灣目前並無類似機制，企業購買健身房會籍作為員工福利，在稅務上無額外誘因，降低了企業主動投資的意願。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>所得稅法 第36條（費用認列）</li>
+              <li>營利事業所得稅查核準則（員工福利費用認定）</li>
+              <li>目前健身費用可作費用認列，但無額外抵減優惠</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>研議企業為員工購買健身服務（每人每年上限N元）得享額外投資抵減</li>
+            <li>或納入「員工健康促進支出」專項扣除，比照員工健檢費用處理</li>
+            <li>可先以試辦計畫形式推動，評估財政影響後再正式立法</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">所得稅法第36條</span>
+          <span class="source-tag">日本健康経営優良法人認定制度</span>
+          <span class="source-tag">美國 IRC §213 醫療費用扣除相關規定</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 立法院 ══ -->
+  <div class="agency-section" data-agency="ly">
+    <div class="agency-header">
+      <div class="agency-icon">🏛️</div>
+      <div>
+        <div class="agency-name">立法院</div>
+        <div class="agency-sub">Legislative Yuan</div>
+      </div>
+      <div class="issue-count">2 項議題</div>
+    </div>
+
+    <!-- LY1 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>健身房預付型消費糾紛持續高居消費申訴前段班，消保法配套不足</h3>
+          <div class="issue-tagline">業者倒閉、停業後消費者求償無門，預付款項保全機制缺失</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>健身房多採月費或年費預付制，消費者一次繳付大額費用後，若業者倒閉或無預警停業，幾乎無法追回款項。消費者保護委員會資料顯示，健身房消費申訴長期位居服務業前段班。現行《消費者保護法》雖有預付式交易規範，但欠缺強制履約保證機制，業者遵循意願低落。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>消費者保護法 第19條之1（預付型消費）</li>
+              <li>定型化契約應記載事項（健身中心版本）</li>
+              <li>行政院消費者保護會相關規定</li>
+              <li>現行缺乏：強制履約保證金或信託機制</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>修正消費者保護法，增訂「運動健身業預付式消費履約保證」專章</li>
+            <li>參考旅遊業履約保證機制，要求健身房依收費規模提存保證金或投保</li>
+            <li>建立消費者預付款項信託專戶制度（類似補習班規定）</li>
+            <li>主管機關定期公告業者財務健全評等，供消費者參考</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">消費者保護法第19條之1</span>
+          <span class="source-tag">行政院消費者保護會年度消費申訴統計</span>
+          <span class="source-tag">健身中心定型化契約應記載及不得記載事項</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LY2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>健身產業跨部會管理分散，缺乏單一窗口協調機制</h3>
+          <div class="issue-tagline">同一家健身房同時受衛福部、勞動部、體育署、消保單位多頭管轄</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>一家健身房的日常營運，同時受體育署（場館認定）、衛福部（健康服務界定）、勞動部（教練勞動關係）、財政部（稅務）、消保單位（合約規範）、地方政府（使用執照、消防）等多個機關管轄。業者面對法規問題時不知找誰、各機關互相推諉，成為新業者進入最大的隱形障礙。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>運動產業發展條例（體育署主管）</li>
+              <li>商業登記法（地方政府主管）</li>
+              <li>各機關各司其職，無跨部會整合平台</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>立法院要求行政院成立「運動健身產業跨部會平台」，由體育署擔任幕僚</li>
+            <li>建立健身業者法規諮詢單一窗口（類似工業局對製造業的服務模式）</li>
+            <li>定期發布「健身產業法規遵循指引」，降低中小業者合規成本</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">運動產業發展條例</span>
+          <span class="source-tag">行政院組織法</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 地方政府 ══ -->
+  <div class="agency-section" data-agency="local">
+    <div class="agency-header">
+      <div class="agency-icon">🏙️</div>
+      <div>
+        <div class="agency-name">地方政府 / 縣市議員</div>
+        <div class="agency-sub">Local Government & City Councils</div>
+      </div>
+      <div class="issue-count">2 項議題</div>
+    </div>
+
+    <!-- LC1 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-high">高度優先</span>
+        <div style="flex:1">
+          <h3>住宅區小型工作室的合法性問題，數千家微型健身工作室長期處於灰色地帶</h3>
+          <div class="issue-tagline">都市計畫分區限制使大量合法經營的工作室面臨被裁罰風險</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>台灣有大量健身工作室、瑜伽教室、搏擊館設於住宅區或住商混合區，依現行都市計畫法及土地使用分區管制，部分類型的運動服務業務不得於住宅區經營。這使得合法繳稅、合法開業的微型業者隨時面臨被檢舉、裁罰的風險，新興的「個人工作室」經濟更是缺乏明確的法律框架保護。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>都市計畫法（中央）</li>
+              <li>各縣市土地使用分區管制自治條例</li>
+              <li>建築法（使用執照用途）</li>
+              <li>各縣市差異極大，缺乏統一標準</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>各縣市政府明確訂定「微型健身工作室」的土地使用容許條件（如：面積100平方公尺以下、無固定噪音設備、教練對學員人數比例限制）</li>
+            <li>建立合法化申請的快速審查程序，降低小業者的行政成本</li>
+            <li>縣市議員可優先於都市發展委員會提案，要求各縣市訂定明確標準</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">都市計畫法</span>
+          <span class="source-tag">各縣市土地使用分區管制規則</span>
+          <span class="source-tag">內政部建築研究所相關研究</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- LC2 -->
+    <div class="issue-card">
+      <div class="issue-card-header" onclick="toggleIssue(this)">
+        <span class="issue-priority priority-mid">中度優先</span>
+        <div style="flex:1">
+          <h3>地方缺乏健身產業振興計畫，銀髮族與弱勢族群的運動補貼機制空白</h3>
+          <div class="issue-tagline">健身不是有錢人的特權，地方政府有空間帶頭改變</div>
+        </div>
+        <span class="issue-chevron">▾</span>
+      </div>
+      <div class="issue-body">
+        <div class="issue-grid">
+          <div class="issue-block">
+            <div class="issue-block-label">議題背景</div>
+            <p>健身運動對預防慢性病、減少長照需求有顯著效益，但月費動輒千元以上的健身房對低收入戶、銀髮族而言仍是門檻。部分縣市設有長青學苑、社區運動課程，但多侷限於公有場館，無法觸及具有專業設備的商業健身場館。建立地方補貼或健身券制度，可有效填補這個缺口。</p>
+          </div>
+          <div class="issue-block">
+            <div class="issue-block-label">現行法規</div>
+            <ul>
+              <li>各縣市社會局銀髮族補貼計畫（各自為政）</li>
+              <li>體育署補助縣市運動計畫（多限公有場館）</li>
+              <li>地方政府特別預算（有自由裁量空間）</li>
+            </ul>
+          </div>
+        </div>
+        <div class="issue-recommend">
+          <div class="issue-block-label">FitBiz 建議</div>
+          <ul>
+            <li>縣市政府試辦「健康運動補貼券」計畫，補助對象為65歲以上長者及低收入戶</li>
+            <li>補貼券可於認證合格的民間健身場館使用，帶動私部門投入</li>
+            <li>縣市議員可提案要求縣市政府評估試辦可行性，並納入下年度預算規劃</li>
+          </ul>
+        </div>
+        <div class="issue-sources">
+          <span>資料來源：</span>
+          <span class="source-tag">國民健康署慢性病防治年報</span>
+          <span class="source-tag">日本スポーツ振興くじ（SASAKAWA）銀齡補貼模式</span>
+          <span class="source-tag">各縣市長青學苑計畫說明</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="advocacy-cta">
+    <h2>媒體採訪 / 資料引用</h2>
+    <p>本頁所有議題均可自由引用，請註明「FitBiz 台灣健身產業智庫」。<br>如需深度採訪、補充數據、或與業者代表對話，歡迎直接聯繫。</p>
+    <a href="mailto:hello@fitbiz.pro" class="btn-email">聯繫採訪窗口 hello@fitbiz.pro →</a>
+  </div>
+
+</div>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand"><div style="color:white;font-size:1.4rem;font-weight:900;">Fit<span style="color:#F97316;">Biz</span></div><p>台灣健身產業經營者的智庫與社群平台。</p></div>
+    <div><h4>知識庫</h4><ul><li><a href="../industry-insights/index.html">產業洞察</a></li><li><a href="../operations/index.html">經營管理</a></li><li><a href="../legal/index.html">法規合規</a></li></ul></div>
+    <div><h4>資源</h4><ul><li><a href="../marketing/index.html">行銷獲客</a></li><li><a href="../training/index.html">專業培訓</a></li><li><a href="../community/index.html">產業社群</a></li></ul></div>
+    <div><h4>倡議</h4><ul><li><a href="index.html">政府倡議專區</a></li><li><a href="../community/article-4.html">政策白皮書</a></li><li><a href="mailto:hello@fitbiz.pro">媒體聯繫</a></li></ul></div>
+  </div>
+  <div class="footer-bottom"><p>© 2026 FitBiz (fitbiz.pro) · 台灣健身產業 B2B 平台</p></div>
+</footer>
+
+<script src="../js/main.js"></script>
+<script>
+function toggleIssue(header) {
+  const card = header.closest('.issue-card');
+  card.classList.toggle('open');
+}
+function filterAgency(agency, btn) {
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.agency-section').forEach(section => {
+    if (agency === 'all' || section.dataset.agency === agency) {
+      section.style.display = '';
+    } else {
+      section.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>
