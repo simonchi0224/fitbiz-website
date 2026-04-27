@@ -20,7 +20,7 @@
 <!-- Canonical -->
 <link rel="canonical" href="https://www.fitbiz.pro/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Noto+Sans+TC:wght@400;600;700;900&family=Noto+Serif+TC:wght@600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-D3MGMCWKJB"></script>
@@ -33,256 +33,402 @@
 </head>
 <body>
 
-<!-- NAVBAR -->
-<nav class="navbar">
-  <a href="index.html" class="navbar-logo">
-    Fit<span>Biz</span>
-    <small>fitbiz.pro</small>
-  </a>
-  <ul class="navbar-nav">
-    <li><a href="industry-insights/index.html">產業洞察</a></li>
-    <li><a href="operations/index.html">經營管理</a></li>
-    <li><a href="legal/index.html">法規合規</a></li>
-    <li><a href="marketing/index.html">行銷獲客</a></li>
-    <li><a href="training/index.html">專業培訓</a></li>
-    <li><a href="community/index.html">產業社群</a></li>
-    <li><a href="advocacy/index.html">政府倡議</a></li>
-    <li><a href="#newsletter" class="cta">加入社群 →</a></li>
-  </ul>
-  <div class="hamburger"><span></span><span></span><span></span></div>
+<!-- STATUS RIBBON -->
+<div class="d-ribbon">
+  <div class="d-ribbon-inner">
+    <span>台灣 · 健身產業 B2B 智庫</span>
+    <span><span class="d-dot">●</span> 48 篇文章 · 持續更新</span>
+    <span>免費 · 無需登入</span>
+  </div>
+</div>
+
+<!-- MASTHEAD -->
+<nav class="d-masthead">
+  <div class="d-masthead-inner">
+    <div class="d-masthead-left">
+      <a href="index.html" class="d-logo">FitBiz</a>
+      <span class="d-badge">B2B / TW</span>
+    </div>
+    <ul class="d-nav">
+      <li><a href="industry-insights/index.html">產業洞察</a></li>
+      <li><a href="operations/index.html">經營</a></li>
+      <li><a href="legal/index.html">法規</a></li>
+      <li><a href="marketing/index.html">行銷</a></li>
+      <li><a href="training/index.html">培訓</a></li>
+      <li><a href="community/index.html">社群</a></li>
+      <li><a href="advocacy/index.html">政策</a></li>
+    </ul>
+    <button class="d-join-btn" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">加入社群</button>
+  </div>
 </nav>
 
 <!-- HERO -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-badge">🏋️ 台灣健身產業 B2B 平台</div>
-      <h1>健身產業的<span class="highlight">戰國時代</span>，<br>你需要的不只是器材</h1>
-      <p>教練帶走學生、勞基法罰單、行銷費用燒光、現金流斷裂——這些是台灣每一位健身房老闆正在面對的真實困境。FitBiz 是你的後盾。</p>
-      <div class="hero-cta">
-        <a href="#pain-points" class="btn-primary">看看你的痛點 ↓</a>
-        <a href="#sections" class="btn-secondary">探索知識庫</a>
+<section class="d-hero">
+  <div class="d-hero-inner">
+    <div class="d-hero-left">
+      <div class="d-eyebrow">本期頭條 / POLICY BRIEF Nº 01</div>
+      <h1>健保撐不住，<br>為什麼還在把<br>健身房擋在<br><span class="d-verm">社區門外</span>？</h1>
+      <p>每投入 100 億在社區肌力訓練，可避免 136–227 億健保支出。本期政策研究，附 WHO / Lancet 引用，立委可直接抄、媒體可直接引用。</p>
+      <div class="d-hero-cta">
+        <a href="advocacy/urban-fitness-metric.html" class="d-btn-ink">閱讀完整報告</a>
+        <a href="advocacy/urban-fitness-metric.html" class="d-btn-outline">下載 PDF</a>
+        <span class="d-free-tag">免費</span>
+      </div>
+      <div class="d-hero-meta">
+        <span>FitBiz 編輯團隊</span>
+        <span>·</span>
+        <span>引用：WHO · Lancet · 衛福部健保署</span>
       </div>
     </div>
-    <div class="hero-right">
-      <div class="hero-data-card">
-        <div class="hero-data-header">
-          <span class="hero-data-dot"></span>
-          <span>台灣健身產業 · 2025 即時數據</span>
+    <div class="d-hero-right">
+      <div class="d-chart-card">
+        <div class="d-chart-header">
+          <span class="d-chart-label">FIG.01 / ROI 試算</span>
+          <span class="d-chart-unit">NTD 億</span>
         </div>
-        <div class="hero-data-rows">
-          <div class="hero-data-row">
-            <span class="hero-data-icon">🏢</span>
-            <span class="hero-data-label">全台健身場館</span>
-            <span class="hero-data-value">4,200+</span>
-          </div>
-          <div class="hero-data-row">
-            <span class="hero-data-icon">📉</span>
-            <span class="hero-data-label">3年內倒閉率</span>
-            <span class="hero-data-value warn">33%</span>
-          </div>
-          <div class="hero-data-row">
-            <span class="hero-data-icon">💰</span>
-            <span class="hero-data-label">年產值規模</span>
-            <span class="hero-data-value">300億+</span>
-          </div>
-          <div class="hero-data-row">
-            <span class="hero-data-icon">👴</span>
-            <span class="hero-data-label">銀髮潛在商機</span>
-            <span class="hero-data-value">2,800億</span>
-          </div>
-          <div class="hero-data-row">
-            <span class="hero-data-icon">⚖️</span>
-            <span class="hero-data-label">業者具備法規知識</span>
-            <span class="hero-data-value warn">40%</span>
-          </div>
-        </div>
-        <div class="hero-data-footer">
-          <a href="industry-insights/article-1.html" class="hero-data-link">查看完整產業報告 →</a>
-        </div>
+        <div class="d-chart-title">每 1 元投入社區肌力訓練，可省下 1.36–2.27 元健保支出</div>
+        <svg viewBox="0 0 360 240" xmlns="http://www.w3.org/2000/svg" class="d-chart-svg">
+          <!-- Track -->
+          <rect x="22" y="40" width="36" height="160" fill="#e8dec5"/>
+          <rect x="78" y="40" width="36" height="160" fill="#e8dec5"/>
+          <rect x="134" y="40" width="36" height="160" fill="#e8dec5"/>
+          <rect x="190" y="40" width="36" height="160" fill="#e8dec5"/>
+          <rect x="246" y="40" width="36" height="160" fill="#e8dec5"/>
+          <rect x="302" y="40" width="36" height="160" fill="#e8dec5"/>
+          <!-- Bars (height = value/176*160, y = 200-height) -->
+          <rect x="22" y="109" width="36" height="91" fill="#171513"/>
+          <rect x="78" y="142" width="36" height="58" fill="#171513"/>
+          <rect x="134" y="153" width="36" height="47" fill="#171513"/>
+          <rect x="190" y="166" width="36" height="34" fill="#171513"/>
+          <rect x="246" y="180" width="36" height="20" fill="#171513"/>
+          <rect x="302" y="40"  width="36" height="160" fill="#a02818"/>
+          <!-- Value labels -->
+          <text x="40"  y="104" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#171513" font-weight="600">100億</text>
+          <text x="96"  y="137" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#171513" font-weight="600">64</text>
+          <text x="152" y="148" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#171513" font-weight="600">52</text>
+          <text x="208" y="161" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#171513" font-weight="600">38</text>
+          <text x="264" y="175" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#171513" font-weight="600">22</text>
+          <text x="320" y="34"  text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="10" fill="#a02818" font-weight="700">176億</text>
+          <!-- Category labels -->
+          <text x="40"  y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5e544a">投入</text>
+          <text x="96"  y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5e544a">心血管</text>
+          <text x="152" y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5e544a">糖尿病</text>
+          <text x="208" y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5e544a">肌少症</text>
+          <text x="264" y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#5e544a">骨疏</text>
+          <text x="320" y="218" text-anchor="middle" font-family="'JetBrains Mono',monospace" font-size="9" fill="#a02818" font-weight="600">合計</text>
+        </svg>
+        <div class="d-chart-footer">SRC: NHIA 2025 · WHO ACTION PLAN 2030 · FITBIZ MODELING</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-section">
-  <div class="stats-grid">
-    <div class="stat-item">
-      <div class="stat-number">4,200+</div>
-      <div class="stat-label">台灣健身房與工作室</div>
+<!-- INDICATORS BAR -->
+<div class="d-indicators">
+  <div class="d-indicators-inner">
+    <div class="d-ind-label">// 產業即時數據<br><span>2026.04</span></div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">全台場館</div>
+      <div class="d-ind-val">4,217</div>
+      <div class="d-ind-chg pos">+3.2%</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">60%</div>
-      <div class="stat-label">中小型業者缺乏法規知識</div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">倒閉率 3Y</div>
+      <div class="d-ind-val">33%</div>
+      <div class="d-ind-chg neg">+2.1pt</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">3年</div>
-      <div class="stat-label">多數新開健身房的平均壽命</div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">年產值</div>
+      <div class="d-ind-val">300億</div>
+      <div class="d-ind-chg pos">+8.4%</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-number">0</div>
-      <div class="stat-label">產業統一對口政府單位</div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">銀髮 TAM</div>
+      <div class="d-ind-val">2,800億</div>
+      <div class="d-ind-chg neu">—</div>
+    </div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">法規認知</div>
+      <div class="d-ind-val">40%</div>
+      <div class="d-ind-chg neg">低</div>
+    </div>
+    <div class="d-ind-item">
+      <div class="d-ind-name">產業公會</div>
+      <div class="d-ind-val">0</div>
+      <div class="d-ind-chg neg">—</div>
     </div>
   </div>
-</section>
+</div>
 
-<!-- FEATURED RESEARCH -->
-<section style="padding:72px 5% 80px;background:#1d1d1f;">
-  <div style="max-width:1100px;margin:0 auto;">
-    <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:32px;">
+<!-- FEATURED ARTICLES / TOC -->
+<section class="d-toc-section">
+  <div class="d-section-inner">
+    <div class="d-section-head d-section-head--border">
       <div>
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:.12em;color:var(--orange);text-transform:uppercase;margin-bottom:8px;">FEATURED RESEARCH</div>
-        <h2 style="color:white;font-size:clamp(1.4rem,3vw,2rem);font-weight:900;margin:0;">精選深度報告</h2>
+        <div class="d-eyebrow">精選報告 / FEATURED</div>
+        <h2 class="d-section-h2">深度報告，<span class="d-verm">供業者參考、媒體引用。</span></h2>
       </div>
-      <p style="color:rgba(255,255,255,0.5);font-size:0.85rem;margin:0;max-width:360px;line-height:1.6;">供業者自保、媒體引用、立委抄功課。每份報告附完整法規依據與數據來源。</p>
+      <span class="d-toc-meta">每份報告附完整法規依據與數據來源</span>
     </div>
-
-    <!-- Hero report card -->
-    <a href="advocacy/urban-fitness-metric.html" style="display:block;text-decoration:none;background:linear-gradient(135deg,#f97316 0%,#ea580c 100%);border-radius:20px;padding:36px 40px;margin-bottom:20px;position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 20px 60px rgba(249,115,22,0.35)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
-      <div style="position:absolute;right:-20px;top:-20px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,0.06);"></div>
-      <div style="position:absolute;right:60px;bottom:-40px;width:140px;height:140px;border-radius:50%;background:rgba(255,255,255,0.04);"></div>
-      <div style="position:relative;max-width:680px;">
-        <div style="display:flex;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
-          <span style="background:rgba(255,255,255,0.2);color:white;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:20px;">政策研究報告</span>
-          <span style="background:rgba(255,255,255,0.2);color:white;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:20px;">附 WHO / Lancet 引用</span>
-          <span style="background:rgba(255,255,255,0.2);color:white;font-size:0.72rem;font-weight:700;padding:3px 10px;border-radius:20px;">媒體可直接引用</span>
+    <div class="d-toc-rows">
+      <a href="advocacy/urban-fitness-metric.html" class="d-toc-row">
+        <span class="d-toc-num">01</span>
+        <span class="d-toc-tag">政策</span>
+        <div class="d-toc-content">
+          <h3>將「每千人健身設施可及率」納入都市再生績效指標</h3>
+          <p>讓空間鬆綁與財政節省在同一個行政框架內成立。附各縣市現況統計圖表。</p>
         </div>
-        <h3 style="color:white;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:900;line-height:1.35;margin:0 0 12px;">將「每千人健身設施可及率」納入都市再生績效指標——<br>讓空間鬆綁與財政節省在同一個行政框架內成立</h3>
-        <p style="color:rgba(255,255,255,0.85);font-size:0.92rem;line-height:1.7;margin:0 0 20px;">健身房開不了，不只是業者的問題——是台灣都市政策缺少一個量化健康指標的結果。本報告提出具體的指標設計、執行機制，並附各縣市現況統計圖表。</p>
-        <span style="display:inline-flex;align-items:center;gap:6px;background:white;color:#ea580c;font-weight:700;font-size:0.88rem;padding:10px 20px;border-radius:8px;">閱讀完整報告 →</span>
-      </div>
-    </a>
-
-    <!-- Two secondary cards -->
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
-      <a href="legal/article-9.html" style="text-decoration:none;display:flex;flex-direction:column;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;transition:background .2s,transform .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.transform=''">
-        <div style="display:flex;gap:8px;margin-bottom:12px;">
-          <span style="background:rgba(249,115,22,0.2);color:var(--orange);font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:6px;">法規改革</span>
-          <span style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:6px;">國際比對</span>
-        </div>
-        <h3 style="color:white;font-size:1rem;font-weight:800;line-height:1.45;margin:0 0 10px;flex:1;">台灣健身選址困局：國際法理比對與六大修法路徑</h3>
-        <p style="color:rgba(255,255,255,0.55);font-size:0.82rem;line-height:1.6;margin:0 0 16px;">為什麼開快炒店比開健身房更容易？英美日韓已完成的法規翻轉。</p>
-        <span style="color:var(--orange);font-weight:700;font-size:0.82rem;">閱讀報告 →</span>
+        <span class="d-toc-time">18 min</span>
+        <span class="d-toc-arrow">→</span>
       </a>
-
-      <a href="legal/article-10.html" style="text-decoration:none;display:flex;flex-direction:column;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:24px;transition:background .2s,transform .2s;" onmouseover="this.style.background='rgba(255,255,255,0.1)';this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(255,255,255,0.06)';this.style.transform=''">
-        <div style="display:flex;gap:8px;margin-bottom:12px;">
-          <span style="background:rgba(249,115,22,0.2);color:var(--orange);font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:6px;">健保財政</span>
-          <span style="background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);font-size:0.7rem;font-weight:700;padding:3px 8px;border-radius:6px;">ROI試算</span>
+      <a href="legal/article-9.html" class="d-toc-row">
+        <span class="d-toc-num">02</span>
+        <span class="d-toc-tag">法規</span>
+        <div class="d-toc-content">
+          <h3>台灣健身選址困局：國際法理比對與六大修法路徑</h3>
+          <p>為什麼開快炒店比開健身房更容易？英美日韓已完成的法規翻轉。</p>
         </div>
-        <h3 style="color:white;font-size:1rem;font-weight:800;line-height:1.45;margin:0 0 10px;flex:1;">健保快撐不住了，為什麼還在把健身房擋在社區門外？</h3>
-        <p style="color:rgba(255,255,255,0.55);font-size:0.82rem;line-height:1.6;margin:0 0 16px;">每投入100億在社區肌力訓練，可避免136至227億醫療成本。</p>
-        <span style="color:var(--orange);font-weight:700;font-size:0.82rem;">閱讀報告 →</span>
+        <span class="d-toc-time">22 min</span>
+        <span class="d-toc-arrow">→</span>
+      </a>
+      <a href="legal/article-10.html" class="d-toc-row">
+        <span class="d-toc-num">03</span>
+        <span class="d-toc-tag">健保</span>
+        <div class="d-toc-content">
+          <h3>健保撐不住，為什麼還在把健身房擋在社區門外？</h3>
+          <p>每投入 100 億在社區肌力訓練，可避免 136–227 億健保支出。</p>
+        </div>
+        <span class="d-toc-time">15 min</span>
+        <span class="d-toc-arrow">→</span>
+      </a>
+      <a href="legal/index.html" class="d-toc-row">
+        <span class="d-toc-num">04</span>
+        <span class="d-toc-tag">法規</span>
+        <div class="d-toc-content">
+          <h3>承攬 vs. 僱傭：教練合約地雷區與罰則計算</h3>
+          <p>一個字之差罰 90 萬。附範本合約與逐條標註說明。</p>
+        </div>
+        <span class="d-toc-time">20 min</span>
+        <span class="d-toc-arrow">→</span>
+      </a>
+      <a href="operations/index.html" class="d-toc-row">
+        <span class="d-toc-num">05</span>
+        <span class="d-toc-tag">經營</span>
+        <div class="d-toc-content">
+          <h3>預收會費的現金流陷阱：三個月後的缺口怎麼補</h3>
+          <p>從帳面數字看不出來的隱形負債。三個月後現金斷裂的結構性原因。</p>
+        </div>
+        <span class="d-toc-time">12 min</span>
+        <span class="d-toc-arrow">→</span>
       </a>
     </div>
   </div>
 </section>
 
 <!-- PAIN POINTS -->
-<section class="pain-section" id="pain-points">
-  <div class="section-header">
-    <div class="section-label">INDUSTRY PAIN POINTS</div>
-    <h2>這些問題，你中了幾個？</h2>
-    <p>台灣中小型健身房業者面臨資金、法規、行銷、人才的四重夾擊</p>
-  </div>
-  <div class="pain-grid">
-    <div class="pain-card" data-num="01">
-      <div class="pain-icon">😤</div>
-      <h3>教練帶走學生，心血全被帶走</h3>
-      <p>場館花時間、花資源培養教練，一旦離職，學生跟著走。客戶關係完全掌握在個人手中，場館毫無保障。</p>
+<section class="d-pain-section" id="pain-points">
+  <div class="d-section-inner">
+    <div class="d-section-head d-section-head--border">
+      <div class="d-eyebrow">業者實況 / FIELD NOTES</div>
+      <h2 class="d-section-h2">這些問題，<span class="d-verm">你中了幾個？</span></h2>
+      <p class="d-section-desc">台灣中小型健身房業者面對資金、法規、行銷、人才的四重夾擊。每個項目都連到對應的 SOP。</p>
     </div>
-    <div class="pain-card" data-num="02">
-      <div class="pain-icon">⚖️</div>
-      <h3>勞基法像地雷，踩到才知道</h3>
-      <p>教練算承攬還是僱傭？排班怎麼設？加班費怎麼算？一個不懂就是罰單，甚至面對訴訟。</p>
-    </div>
-    <div class="pain-card" data-num="03">
-      <div class="pain-icon">💸</div>
-      <h3>預收會費讓現金流看起來很好看，直到它斷裂</h3>
-      <p>預賣年卡、預售課程讓帳上看起來很漂亮，但真正的現金缺口在三個月後才會出現，到時候已經太晚。</p>
-    </div>
-    <div class="pain-card" data-num="04">
-      <div class="pain-icon">📉</div>
-      <h3>行銷費砸出去，客人還是不來</h3>
-      <p>FB廣告、IG投放、發傳單，每個月燒好幾萬，轉換率卻慘不忍睹。問題不在預算，在策略。</p>
-    </div>
-    <div class="pain-card" data-num="05">
-      <div class="pain-icon">📋</div>
-      <h3>消防、公安、登記，開業前不知道要辦什麼</h3>
-      <p>運動訓練業、競技及休閒運動輔助業，兩個類別差一字，法規要求天差地別。搞錯了開不了業。</p>
-    </div>
-    <div class="pain-card" data-num="06">
-      <div class="pain-icon">🏝️</div>
-      <h3>同業各自為政，沒有人為我們發聲</h3>
-      <p>大型連鎖有公關、有律師、有政府關係。中小型健身房遇到政策問題，找不到任何代言人。</p>
+    <div class="d-pain-grid">
+
+      <a href="operations/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 01</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>教練帶走學生，心血全被帶走</h3>
+        <p>場館花時間培養教練，一旦離職，學生跟著走。客戶關係完全掌握在個人手中，場館毫無保障。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">68%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:68%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：單次流失 25% 會員</span><span>SOP →</span></div>
+      </a>
+
+      <a href="legal/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 02</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="2" x2="12" y2="22"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        </div>
+        <h3>勞基法像地雷，踩到才知道</h3>
+        <p>教練算承攬還是僱傭？排班怎麼設？加班費怎麼算？一個不懂就是罰單，甚至面對訴訟。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">60%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:60%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：罰鍰最高 90 萬</span><span>SOP →</span></div>
+      </a>
+
+      <a href="operations/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 03</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><line x1="12" y1="6" x2="12" y2="8"/><line x1="12" y1="16" x2="12" y2="18"/></svg>
+        </div>
+        <h3>預收會費讓現金流看起來很好看，直到它斷裂</h3>
+        <p>預賣年卡讓帳上漂亮，真正的現金缺口在三個月後才出現，到時候已經太晚。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">54%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:54%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：平均缺口 320 萬</span><span>SOP →</span></div>
+      </a>
+
+      <a href="marketing/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 04</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 17 13.5 8.5 8.5 13.5 2 7"/><polyline points="16 17 22 17 22 11"/></svg>
+        </div>
+        <h3>行銷費砸出去，客人還是不來</h3>
+        <p>FB廣告、IG投放、發傳單，每個月燒好幾萬，轉換率卻慘不忍睹。問題不在預算，在策略。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">71%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:71%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：CAC 高過 LTV</span><span>SOP →</span></div>
+      </a>
+
+      <a href="legal/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 05</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        </div>
+        <h3>消防、公安、登記，開業前不知道要辦什麼</h3>
+        <p>運動訓練業與休閒運動輔助業，兩個類別差一字，法規要求天差地別。搞錯了開不了業。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">49%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:49%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：延誤 4–6 個月</span><span>SOP →</span></div>
+      </a>
+
+      <a href="community/index.html" class="d-pain-card">
+        <div class="d-pain-top">
+          <span class="d-pain-num">// 06</span>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <h3>同業各自為政，沒有人為我們發聲</h3>
+        <p>大型連鎖有公關、有律師、有政府關係。中小型健身房遇到政策問題，找不到任何代言人。</p>
+        <div class="d-hit-bar">
+          <div class="d-hit-label"><span>業者中招率</span><span class="d-verm">88%</span></div>
+          <div class="d-hit-track"><div class="d-hit-fill" style="width:88%"></div></div>
+        </div>
+        <div class="d-pain-footer"><span>典型代價：0 個產業公會</span><span>SOP →</span></div>
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- SECTIONS OVERVIEW -->
-<section class="sections-overview" id="sections">
-  <div class="section-header">
-    <div class="section-label">KNOWLEDGE HUB</div>
-    <h2>FitBiz 六大知識庫</h2>
-    <p>從開業到擴張，每個階段你需要的答案都在這裡</p>
-  </div>
-  <div class="sections-grid">
-    <a href="industry-insights/index.html" class="section-card">
-      <div class="section-card-icon">📊</div>
-      <h3>產業洞察 Industry Insights</h3>
-      <p>台灣健身市場數據、趨勢報告、競爭地圖，讓你做決策有所依據。</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="operations/index.html" class="section-card">
-      <div class="section-card-icon">⚙️</div>
-      <h3>經營管理 Operations</h3>
-      <p>坪效計算、教練留任、CRM選型、現金流管理，打造穩健的營運體系。</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="legal/index.html" class="section-card">
-      <div class="section-card-icon">🛡️</div>
-      <h3>法規合規 Legal & Compliance</h3>
-      <p>勞基法白話文、定型化契約解析、消防安檢，建立你的合規防護網。</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="marketing/index.html" class="section-card">
-      <div class="section-card-icon">🚀</div>
-      <h3>行銷獲客 Marketing & Growth</h3>
-      <p>Google在地SEO、社群策略、LINE自動化，建立可持續的增長引擎。</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="training/index.html" class="section-card">
-      <div class="section-card-icon">🎓</div>
-      <h3>專業培訓 Professional Training</h3>
-      <p>國內外證照比較、特殊族群訓練、從教練到老闆的完整發展路線。</p>
-      <span class="arrow">→</span>
-    </a>
-    <a href="community/index.html" class="section-card">
-      <div class="section-card-icon">🤝</div>
-      <h3>產業社群 Community</h3>
-      <p>業者論壇、供應商評測、政策倡議，讓健身產業有自己的發聲平台。</p>
-      <span class="arrow">→</span>
-    </a>
+<!-- PULL QUOTE -->
+<section class="d-pullquote">
+  <div class="d-pullquote-inner">
+    <div class="d-eyebrow">編者觀點 / EDITORIAL</div>
+    <blockquote>「大型連鎖有公關、有律師、有政府關係。中小型健身房遇到政策問題，<span class="d-verm">找不到任何代言人。</span>這就是 FitBiz 存在的理由。」</blockquote>
+    <div class="d-pullquote-credit">—— FitBiz 編輯部</div>
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="cta-band" id="newsletter">
-  <h2>加入 3,000+ 位健身產業業者的社群</h2>
-  <p>每週一封電子報，精選最實用的法規更新、經營策略與產業動態，直接送到你的信箱。</p>
-  <a href="https://forms.gle/ZC1PB7HXuXubiqBcA" class="btn-primary" target="_blank" style="display:inline-flex;">立即加入社群 →</a>
+<!-- KNOWLEDGE PILLARS -->
+<section class="d-knowledge" id="sections">
+  <div class="d-section-inner">
+    <div class="d-section-head d-section-head--border">
+      <div class="d-eyebrow">知識庫 / ARCHIVE</div>
+      <h2 class="d-section-h2">從開業到擴張，<br>每階段的<span class="d-verm">對應章節。</span></h2>
+      <p class="d-section-desc">48 篇深度文章 · 持續更新。每篇都附法規依據與實務案例。</p>
+    </div>
+    <div class="d-k-table">
+      <a href="industry-insights/index.html" class="d-k-row">
+        <span class="d-k-num">01</span>
+        <div class="d-k-info"><div class="d-k-title">產業洞察</div><div class="d-k-en">INSIGHTS</div></div>
+        <p class="d-k-desc">台灣健身市場數據、趨勢報告、競爭地圖。讓你做決策有所依據。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+      <a href="operations/index.html" class="d-k-row">
+        <span class="d-k-num">02</span>
+        <div class="d-k-info"><div class="d-k-title">經營管理</div><div class="d-k-en">OPERATIONS</div></div>
+        <p class="d-k-desc">坪效計算、教練留任、CRM 選型、現金流管理，打造穩健的營運體系。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+      <a href="legal/index.html" class="d-k-row">
+        <span class="d-k-num">03</span>
+        <div class="d-k-info"><div class="d-k-title">法規合規</div><div class="d-k-en">LEGAL</div></div>
+        <p class="d-k-desc">勞基法白話文、定型化契約解析、消防安檢，建立你的合規防護網。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+      <a href="marketing/index.html" class="d-k-row">
+        <span class="d-k-num">04</span>
+        <div class="d-k-info"><div class="d-k-title">行銷獲客</div><div class="d-k-en">GROWTH</div></div>
+        <p class="d-k-desc">Google 在地 SEO、社群策略、LINE 自動化，建立可持續的增長引擎。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+      <a href="training/index.html" class="d-k-row">
+        <span class="d-k-num">05</span>
+        <div class="d-k-info"><div class="d-k-title">專業培訓</div><div class="d-k-en">TRAINING</div></div>
+        <p class="d-k-desc">國內外證照比較、特殊族群訓練、從教練到老闆的完整發展路線。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+      <a href="community/index.html" class="d-k-row">
+        <span class="d-k-num">06</span>
+        <div class="d-k-info"><div class="d-k-title">產業社群</div><div class="d-k-en">COMMUNITY</div></div>
+        <p class="d-k-desc">業者論壇、供應商評測、政策倡議，讓健身產業有自己的發聲平台。</p>
+        <span class="d-k-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- TWO AUDIENCES -->
+<section class="d-two-aud">
+  <div class="d-section-inner">
+    <div class="d-two-grid">
+      <div class="d-aud-owners">
+        <div class="d-eyebrow">給業者 / FOR OWNERS</div>
+        <h3>把法規條文翻成<br>你看得懂的 SOP。</h3>
+        <p>每篇文章都附：對應法條、罰則金額、實際案例、可下載的範本。</p>
+        <a href="#sections" class="d-btn-ink">進入知識庫 →</a>
+      </div>
+      <div class="d-aud-media">
+        <div class="d-eyebrow d-eyebrow-fire">給媒體 / FOR PRESS &amp; LEGISLATORS</div>
+        <h3>所有報告附完整<br>引用與圖表原始檔。</h3>
+        <p>SVG / CSV / 引用格式（APA / Chicago / BibTeX）一次給齊。不需要重新製圖。</p>
+        <div class="d-cite-box">
+          <span class="d-cite-comment">// CITATION · CHICAGO</span><br>
+          Chi, S.-H. 2026. <em>Fitness Facility Access as a Public Health Indicator.</em> FitBiz Policy Series.
+        </div>
+        <div class="d-cite-btns">
+          <button class="d-cite-btn" data-copy="Chi, S.-H. (2026). Fitness Facility Access as a Public Health Indicator. FitBiz Policy Series.">COPY APA</button>
+          <button class="d-cite-btn" data-copy="@techreport{chi2026fitness, author={Chi, Simon-Hsiang}, title={Fitness Facility Access as a Public Health Indicator}, institution={FitBiz Policy Series}, year={2026}}">COPY BIBTEX</button>
+          <a href="mailto:simonchi0224@gmail.com" class="d-cite-link">聯絡編輯部</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE -->
+<section class="d-subscribe" id="newsletter">
+  <div class="d-subscribe-inner">
+    <div class="d-eyebrow">每週通訊 / WEEKLY DISPATCH</div>
+    <h2>每週一封，<br><span class="d-verm">和 3,000+ 位業者一起進步。</span></h2>
+    <p>法規更新、經營策略、政府補助。一次說清楚，五分鐘讀完。</p>
+    <a href="https://forms.gle/ZC1PB7HXuXubiqBcA" class="d-btn-ink" target="_blank">立即訂閱 →</a>
+    <div class="d-subscribe-note">免費 · 隨時退訂 · 不轉售名單</div>
+  </div>
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-grid">
-    <div class="footer-brand">
-      <div style="color:white;font-size:1.4rem;font-weight:900;">Fit<span style="color:#F97316;">Biz</span></div>
-      <p>台灣健身產業經營者的智庫與社群平台。賦能健身創業者，化解經營痛點，推動產業升級。</p>
+<footer class="d-footer">
+  <div class="d-footer-inner">
+    <div class="d-footer-brand">
+      <div class="d-footer-logo">FitBiz</div>
+      <p>台灣健身產業 B2B 智庫。<br>賦能業者、化解痛點、推動產業升級。</p>
     </div>
     <div>
-      <h4>知識庫</h4>
+      <div class="d-footer-col-head">知識</div>
       <ul>
         <li><a href="industry-insights/index.html">產業洞察</a></li>
         <li><a href="operations/index.html">經營管理</a></li>
@@ -290,7 +436,7 @@
       </ul>
     </div>
     <div>
-      <h4>資源</h4>
+      <div class="d-footer-col-head">資源</div>
       <ul>
         <li><a href="marketing/index.html">行銷獲客</a></li>
         <li><a href="training/index.html">專業培訓</a></li>
@@ -298,7 +444,7 @@
       </ul>
     </div>
     <div>
-      <h4>關於</h4>
+      <div class="d-footer-col-head">關於</div>
       <ul>
         <li><a href="#">關於 FitBiz</a></li>
         <li><a href="#">品牌合作</a></li>
@@ -307,8 +453,9 @@
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
-    <p>© 2025 FitBiz (fitbiz.pro) · 台灣健身產業 B2B 平台 · 賦能健身創業者，推動產業升級</p>
+  <div class="d-footer-bottom">
+    <span>© 2026 FITBIZ.PRO · TAIWAN B2B FITNESS PLATFORM</span>
+    <span>SET IN NOTO SERIF TC · NOTO SANS TC · JETBRAINS MONO</span>
   </div>
 </footer>
 

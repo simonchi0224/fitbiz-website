@@ -1,3 +1,15 @@
+// Citation copy buttons (Direction D)
+document.querySelectorAll('.d-cite-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const text = btn.dataset.copy;
+    navigator.clipboard.writeText(text).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = '✓ COPIED';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    });
+  });
+});
+
 // Hamburger menu
 const hamburger = document.querySelector('.hamburger');
 const nav = document.querySelector('.navbar-nav');
