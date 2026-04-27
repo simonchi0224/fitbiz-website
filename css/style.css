@@ -476,3 +476,35 @@ footer ul a:hover { color: var(--orange); }
   background: var(--bg-2); border: 1px solid var(--border);
   padding: 2px 9px; border-radius: 20px; margin-top: 4px;
 }
+
+/* ===== SHARE BAR ===== */
+.share-bar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 16px 0; margin: 20px 0 0;
+  border-top: 1px solid var(--border);
+}
+.share-label {
+  font-family: 'Space Mono', monospace;
+  font-size: 0.68rem; font-weight: 700;
+  color: var(--ink-3); letter-spacing: 0.15em; text-transform: uppercase;
+  flex-shrink: 0;
+}
+.share-btn {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 7px 14px; border-radius: 999px;
+  font-size: 0.78rem; font-weight: 600;
+  border: 1px solid var(--border);
+  background: var(--bg); color: var(--ink-2);
+  cursor: pointer; text-decoration: none;
+  transition: all 0.18s; white-space: nowrap;
+  font-family: inherit;
+}
+.share-btn:hover { border-color: var(--ink-2); color: var(--ink); background: var(--bg-2); }
+.share-btn.line  { border-color: #06c755; color: #06c755; }
+.share-btn.line:hover  { background: #06c755; color: #fff; }
+.share-btn.fb    { border-color: #1877f2; color: #1877f2; }
+.share-btn.fb:hover    { background: #1877f2; color: #fff; }
+.share-btn.native { background: var(--orange); color: #fff; border-color: var(--orange); }
+.share-btn.native:hover { background: var(--orange-d); border-color: var(--orange-d); }
+.share-btn.copied { border-color: #10b981 !important; color: #10b981 !important; }
+@media (max-width: 480px) { .share-label { width: 100%; } }

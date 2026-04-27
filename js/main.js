@@ -147,3 +147,61 @@ function buildRelatedArticles() {
 }
 
 document.addEventListener('DOMContentLoaded', buildRelatedArticles);
+
+// ===== 社群分享列 =====
+function buildShareBar() {
+  const header = document.querySelector('.article-header');
+  if (!header) return;
+
+  const url  = encodeURIComponent(window.location.href);
+  const title = encodeURIComponent(document.title.replace('｜FitBiz', '').trim());
+
+  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${url}`;
+  const fbUrl   = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+  const liUrl   = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
+
+  const canNativeShare = navigator.share !== undefined;
+
+  const bar = document.createElement('div');
+  bar.className = 'share-bar';
+
+  if (canNativeShare) {
+    bar.innerHTML = `
+      <span class="share-label">分享文章</span>
+      <button class="share-btn native" id="native-share-btn">↑ 分享</button>
+      <a class="share-btn line"  href="${lineUrl}" target="_blank" rel="noopener">LINE</a>
+      <a class="share-btn fb"   href="${fbUrl}"   target="_blank" rel="noopener">Facebook</a>
+      <button class="share-btn" id="copy-link-btn">🔗 複製連結</button>`;
+  } else {
+    bar.innerHTML = `
+      <span class="share-label">分享文章</span>
+      <a class="share-btn line"  href="${lineUrl}" target="_blank" rel="noopener">LINE</a>
+      <a class="share-btn fb"   href="${fbUrl}"   target="_blank" rel="noopener">Facebook</a>
+      <a class="share-btn"      href="${liUrl}"   target="_blank" rel="noopener">LinkedIn</a>
+      <button class="share-btn" id="copy-link-btn">🔗 複製連結</button>`;
+  }
+
+  header.appendChild(bar);
+
+  // 原生分享
+  const nativeBtn = document.getElementById('native-share-btn');
+  if (nativeBtn) {
+    nativeBtn.addEventListener('click', () => {
+      navigator.share({ title: document.title, url: window.location.href }).catch(() => {});
+    });
+  }
+
+  // 複製連結
+  const copyBtn = document.getElementById('copy-link-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        copyBtn.textContent = '✓ 已複製';
+        copyBtn.classList.add('copied');
+        setTimeout(() => { copyBtn.textContent = '🔗 複製連結'; copyBtn.classList.remove('copied'); }, 2000);
+      });
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', buildShareBar);
