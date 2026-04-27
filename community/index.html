@@ -149,9 +149,52 @@
         <div style="font-size:0.85rem;color:var(--navy-light);margin-top:4px;">即將上線</div>
       </div>
     </div>
-    <p style="margin-top:24px;color:var(--navy-light);font-size:0.9rem;">想成為認證供應商？<a href="mailto:hello@fitbiz.pro" style="color:var(--orange);font-weight:700;">聯絡我們</a></p>
+    <div style="margin-top:32px;background:white;border:1px solid #e5e7eb;border-radius:12px;padding:32px;max-width:480px;margin-left:auto;margin-right:auto;text-align:left;">
+      <p style="font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:4px;">申請成為認證供應商</p>
+      <p style="font-size:0.85rem;color:var(--navy-light);margin-bottom:20px;">目錄上線後優先刊登，不收費。</p>
+      <form id="vendor-form" action="https://formspree.io/f/xpqkeobd" method="POST" style="display:flex;flex-direction:column;gap:12px;">
+        <input type="text" name="company" placeholder="公司 / 品牌名稱" required
+          style="border:1px solid #e5e7eb;border-radius:6px;padding:10px 14px;font-size:0.9rem;font-family:inherit;outline:none;">
+        <input type="text" name="category" placeholder="供應商類型（例：器材、保險、管理系統）" required
+          style="border:1px solid #e5e7eb;border-radius:6px;padding:10px 14px;font-size:0.9rem;font-family:inherit;outline:none;">
+        <input type="email" name="email" placeholder="聯絡 Email" required
+          style="border:1px solid #e5e7eb;border-radius:6px;padding:10px 14px;font-size:0.9rem;font-family:inherit;outline:none;">
+        <button type="submit"
+          style="background:var(--orange);color:white;border:none;border-radius:6px;padding:12px;font-size:0.9rem;font-weight:700;cursor:pointer;font-family:inherit;">
+          送出申請
+        </button>
+        <div id="vendor-success" style="display:none;font-size:0.85rem;color:#16a34a;text-align:center;padding:8px;">
+          已收到申請，目錄上線時會優先通知您。
+        </div>
+      </form>
+    </div>
   </div>
 </section>
+
+<script>
+document.getElementById('vendor-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const btn = this.querySelector('button[type="submit"]');
+  btn.textContent = '送出中…';
+  btn.disabled = true;
+  try {
+    const res = await fetch('https://formspree.io/f/xpqkeobd', {
+      method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' }
+    });
+    if (res.ok) {
+      this.reset();
+      btn.style.display = 'none';
+      document.getElementById('vendor-success').style.display = 'block';
+    } else {
+      btn.textContent = '送出失敗，請稍後再試';
+      btn.disabled = false;
+    }
+  } catch {
+    btn.textContent = '送出失敗，請稍後再試';
+    btn.disabled = false;
+  }
+});
+</script>
 
 <footer class="d-footer">
   <div class="d-footer-inner">
