@@ -1,0 +1,12 @@
+[
+  {
+    "id": "demo-001",
+    "name": "示範器材有限公司",
+    "category": "器材供應商",
+    "desc": "專營商用健身器材，提供全台安裝與保固服務，合作超過200家場館。",
+    "contact": "demo@example.com",
+    "website": "https://example.com",
+    "tags": ["商用器材", "全台服務", "保固完善"],
+    "verified": true
+  }
+]
