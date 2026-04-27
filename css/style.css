@@ -1199,3 +1199,120 @@ footer ul a:hover { color: var(--orange); }
   .d-pullquote { padding: 64px 20px; }
   .d-subscribe-inner { padding: 64px 20px; }
 }
+
+/* ===== JOIN MODAL ===== */
+#join-modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 9000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+#join-modal-overlay.is-open { display: flex; }
+
+#join-modal {
+  background: #fff;
+  max-width: 460px;
+  width: 100%;
+  padding: 40px 36px 36px;
+  position: relative;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+#join-modal-close {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none; border: none;
+  font-size: 24px; cursor: pointer;
+  color: var(--d-ink); line-height: 1;
+}
+
+.jm-label {
+  font-family: var(--d-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  color: var(--sepia);
+  margin-bottom: 8px;
+}
+
+.jm-title {
+  font-family: var(--d-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--d-ink);
+  margin-bottom: 8px;
+}
+
+.jm-sub {
+  font-size: 14px;
+  color: var(--sepia);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.jm-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-bottom: 14px;
+}
+
+.jm-field label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--sepia);
+  text-transform: uppercase;
+}
+
+.jm-field input,
+.jm-field select {
+  border: 1px solid var(--rule);
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: var(--d-sans, inherit);
+  color: var(--d-ink);
+  background: #fff;
+  outline: none;
+  border-radius: 0;
+  -webkit-appearance: none;
+  transition: border-color 0.2s;
+}
+
+.jm-field input:focus,
+.jm-field select:focus { border-color: var(--d-ink); }
+
+.jm-submit {
+  width: 100%;
+  background: var(--d-ink);
+  color: #fff;
+  border: none;
+  padding: 13px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: background 0.2s;
+}
+.jm-submit:hover { background: #333; }
+
+.jm-note {
+  font-size: 12px;
+  color: var(--sepia);
+  text-align: center;
+  margin-top: 10px;
+}
+
+#join-success {
+  font-size: 14px;
+  color: #16a34a;
+  text-align: center;
+  padding: 12px;
+  background: #f0fdf4;
+  margin-top: 12px;
+}

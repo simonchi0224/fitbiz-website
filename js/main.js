@@ -1,3 +1,104 @@
+// ===== 加入 FitBiz 聯盟 Modal =====
+(function() {
+  const ENDPOINT = 'https://formspree.io/f/xvzdnvlq';
+
+  function injectModal() {
+    const el = document.createElement('div');
+    el.id = 'join-modal-overlay';
+    el.innerHTML = `
+      <div id="join-modal">
+        <button id="join-modal-close" aria-label="關閉">&times;</button>
+        <p class="jm-label">FITBIZ ALLIANCE</p>
+        <h2 class="jm-title">加入 FitBiz 聯盟</h2>
+        <p class="jm-sub">和同業一同對抗產業困局。限健身房經營者，免費加入。</p>
+        <form id="join-form">
+          <div class="jm-field">
+            <label>姓名</label>
+            <input type="text" name="name" placeholder="王小明" required>
+          </div>
+          <div class="jm-field">
+            <label>場館名稱</label>
+            <input type="text" name="gym_name" placeholder="四季健身 CrossFit" required>
+          </div>
+          <div class="jm-field">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="jm-field">
+            <label>場館規模</label>
+            <select name="gym_size">
+              <option value="">請選擇</option>
+              <option>1 館</option>
+              <option>2–3 館</option>
+              <option>4 館以上</option>
+            </select>
+          </div>
+          <button type="submit" class="jm-submit">立即申請加入</button>
+          <p class="jm-note">通常在 2 個工作天內回覆</p>
+          <div id="join-success" style="display:none">
+            已收到申請，我們會盡快與您聯繫。
+          </div>
+        </form>
+      </div>`;
+    document.body.appendChild(el);
+
+    document.getElementById('join-modal-close').addEventListener('click', closeModal);
+    el.addEventListener('click', e => { if (e.target === el) closeModal(); });
+
+    document.getElementById('join-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = this.querySelector('button[type="submit"]');
+      btn.textContent = '送出中…';
+      btn.disabled = true;
+      try {
+        const res = await fetch(ENDPOINT, {
+          method: 'POST', body: new FormData(this), headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          this.reset();
+          btn.style.display = 'none';
+          this.querySelector('.jm-note').style.display = 'none';
+          document.getElementById('join-success').style.display = 'block';
+        } else {
+          btn.textContent = '送出失敗，請稍後再試';
+          btn.disabled = false;
+        }
+      } catch {
+        btn.textContent = '送出失敗，請稍後再試';
+        btn.disabled = false;
+      }
+    });
+  }
+
+  function openModal() {
+    document.getElementById('join-modal-overlay').classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('join-modal-overlay').classList.remove('is-open');
+    document.body.style.overflow = '';
+  }
+
+  window.openJoinModal = openModal;
+
+  document.addEventListener('DOMContentLoaded', function() {
+    injectModal();
+
+    // Override all d-join-btn buttons
+    document.querySelectorAll('.d-join-btn').forEach(btn => {
+      btn.onclick = null;
+      btn.addEventListener('click', openModal);
+    });
+
+    // Override all Google Form links
+    document.querySelectorAll('a[href*="forms.gle/ZC1PB7HXuXubiqBcA"]').forEach(a => {
+      a.href = '#';
+      a.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    });
+  });
+})();
+
 // Citation copy buttons (Direction D)
 document.querySelectorAll('.d-cite-btn').forEach(btn => {
   btn.addEventListener('click', () => {
