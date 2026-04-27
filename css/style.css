@@ -37,7 +37,26 @@ body {
   background: var(--bg);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
 }
+
+/* Noise texture — 淺色主題用極淡 */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none; z-index: 0; opacity: 0.35;
+}
+.navbar, .hero, .stats-section, .pain-section, .sections-overview,
+.articles-section, .cta-band, footer { position: relative; z-index: 1; }
+
+/* Fade up animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.hero-left { animation: fadeUp 0.7s ease both; }
+.hero-right { animation: fadeUp 0.7s ease 0.2s both; }
 
 a { text-decoration: none; color: inherit; }
 img { max-width: 100%; display: block; }
@@ -56,7 +75,7 @@ img { max-width: 100%; display: block; }
 .navbar-logo {
   display: flex; align-items: baseline; gap: 2px;
   color: var(--ink); font-size: 1.25rem; font-weight: 900;
-  letter-spacing: -0.5px;
+  letter-spacing: -0.5px; font-family: 'Space Mono', monospace;
 }
 .navbar-logo span { color: var(--orange); }
 .navbar-logo small {
@@ -111,7 +130,7 @@ img { max-width: 100%; display: block; }
   color: var(--ink); line-height: 1.2; margin-bottom: 20px;
   letter-spacing: -1px;
 }
-.hero h1 .highlight { color: var(--orange); }
+.hero h1 .highlight { color: var(--orange); white-space: nowrap; }
 .hero p {
   color: var(--ink-2); font-size: 1.05rem;
   margin-bottom: 36px; max-width: 500px; line-height: 1.75;
@@ -196,7 +215,8 @@ img { max-width: 100%; display: block; }
   text-align: center;
 }
 .stat-number {
-  font-size: 2.8rem; font-weight: 900;
+  font-family: 'Space Mono', monospace;
+  font-size: 2.8rem; font-weight: 700;
   color: var(--ink); line-height: 1;
   margin-bottom: 8px; letter-spacing: -1.5px;
 }
@@ -205,11 +225,18 @@ img { max-width: 100%; display: block; }
 
 /* ===== SECTION HEADERS ===== */
 .section-header { text-align: center; margin-bottom: 56px; }
+.section-header .section-label { justify-content: center; }
+.section-header .section-label::after { display: none; }
 .section-label {
-  display: inline-block;
-  color: var(--orange); font-size: 0.72rem; font-weight: 700;
+  display: flex; align-items: center; gap: 12px;
+  font-family: 'Space Mono', monospace;
+  color: var(--orange); font-size: 0.68rem; font-weight: 700;
   letter-spacing: 2px; text-transform: uppercase;
   margin-bottom: 12px;
+}
+.section-label::after {
+  content: ''; flex: 1; height: 1px;
+  background: var(--border);
 }
 .section-header h2 {
   font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 900;
@@ -232,6 +259,15 @@ img { max-width: 100%; display: block; }
   padding: 32px 28px; border: 1px solid var(--border);
   transition: all 0.2s;
   position: relative; overflow: hidden;
+  counter-increment: pain-counter;
+}
+.pain-card::after {
+  content: attr(data-num);
+  font-family: 'Space Mono', monospace;
+  font-size: 5rem; font-weight: 700;
+  color: rgba(0,0,0,0.04);
+  position: absolute; top: 4px; right: 16px;
+  line-height: 1; pointer-events: none;
 }
 .pain-card::before {
   content: ''; position: absolute; top: 0; left: 0;
@@ -357,7 +393,7 @@ img { max-width: 100%; display: block; }
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 20px; text-align: center;
 }
-.data-box .num { font-size: 2rem; font-weight: 900; color: var(--orange); letter-spacing: -1px; }
+.data-box .num { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--orange); letter-spacing: -1px; }
 .data-box .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.6); margin-top: 4px; }
 
 /* ===== CTA BAND ===== */
