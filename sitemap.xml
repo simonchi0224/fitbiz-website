@@ -2,78 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
   <!-- 首頁 -->
-  <url><loc>https://www.fitbiz.pro/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
+  <url><loc>https://www.fitbiz.pro/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
 
   <!-- 產業洞察 -->
-  <url><loc>https://www.fitbiz.pro/industry-insights/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/industry-insights/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-7.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-8.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/industry-insights/article-9.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 經營管理 -->
-  <url><loc>https://www.fitbiz.pro/operations/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-7.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/operations/article-8.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-7.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-8.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-9.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/operations/article-10.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 法規合規 -->
-  <url><loc>https://www.fitbiz.pro/legal/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-7.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-8.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-9.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/article-10.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-7.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-8.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-9.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/article-10.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 行銷獲客 -->
-  <url><loc>https://www.fitbiz.pro/marketing/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/marketing/article-7.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-7.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/marketing/article-8.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 專業培訓 -->
-  <url><loc>https://www.fitbiz.pro/training/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/training/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/training/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 產業社群 -->
-  <url><loc>https://www.fitbiz.pro/community/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-1.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-2.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-3.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-4.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-5.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://www.fitbiz.pro/community/article-6.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-1.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-2.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-3.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-4.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-5.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/community/article-6.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 政策倡議 -->
-  <url><loc>https://www.fitbiz.pro/advocacy/</loc><changefreq>weekly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/advocacy/urban-fitness-metric.html</loc><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://www.fitbiz.pro/advocacy/fitness-density-map.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.fitbiz.pro/advocacy/</loc><lastmod>2026-08-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/advocacy/urban-fitness-metric.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://www.fitbiz.pro/advocacy/fitness-density-map.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 
   <!-- 關於 / 頁尾 -->
-  <url><loc>https://www.fitbiz.pro/about/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.fitbiz.pro/brand-partnership/</loc><changefreq>monthly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/media-contact.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
-  <url><loc>https://www.fitbiz.pro/legal/privacy-policy.html</loc><changefreq>monthly</changefreq><priority>0.2</priority></url>
+  <url><loc>https://www.fitbiz.pro/about/</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.fitbiz.pro/brand-partnership/</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.4</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/media-contact.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://www.fitbiz.pro/legal/privacy-policy.html</loc><lastmod>2026-08-16</lastmod><changefreq>monthly</changefreq><priority>0.2</priority></url>
 
 </urlset>
