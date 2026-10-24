@@ -318,3 +318,16 @@ function buildShareBar() {
 }
 
 document.addEventListener('DOMContentLoaded', buildShareBar);
+
+// ===== 文章圖表：捲動到可視範圍時播放進場動畫 =====
+(function initCharts() {
+  const charts = document.querySelectorAll('.fb-chart');
+  if (!charts.length || !('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('fb-js');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) { e.target.classList.add('fb-in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.25 });
+  charts.forEach((c) => io.observe(c));
+})();
